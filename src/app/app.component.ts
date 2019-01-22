@@ -7,7 +7,6 @@ import * as firebase from 'firebase';
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-    title = 'Shopping-list-app';
     loadedFeature = 'recipe';
 
     ngOnInit() {
@@ -17,8 +16,7 @@ export class AppComponent implements OnInit {
         });
     }
 
-    // Temp Navigate
-    onNavigate(featureName: string) {
-        this.loadedFeature = featureName;
+    onNavigate(feature: string) {
+        this.loadedFeature = feature;
     }
 }

@@ -15,7 +15,7 @@ export class DataHttpService {
     private authService: AuthService) { }
 
   storeRecipies() {
-    return this.http.put('https://udmey-angular-124b7.firebaseio.com/recipies.json', this.rService.getRecipies());
+    return this.http.put('https://udmey-angular-124b7.firebaseio.com/recipies.json', this.rService.getRecipes());
   }
 
   getRecipies() {
@@ -33,7 +33,7 @@ export class DataHttpService {
       })
     )
     .subscribe((recipes: Recipe[]) => {
-      this.rService.setRecipies(recipes);
+      this.rService.setRecipes(recipes);
     });
   }
 
