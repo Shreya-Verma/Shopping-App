@@ -15,12 +15,12 @@ export class DataHttpService {
     private authService: AuthService) { }
 
   storeRecipies() {
-    return this.http.put('https://udmey-angular-124b7.firebaseio.com/recipies.json', this.rService.getRecipes());
+    return this.http.put('your firebase project url/recipies.json', this.rService.getRecipes());
   }
 
   getRecipies() {
     const token = this.authService.getToken();
-    return this.http.get('https://udmey-angular-124b7.firebaseio.com/recipies.json?auth=' + token)
+    return this.http.get('your firebase project url/recipies.json?auth=' + token)
     .pipe(
       map((resp: Response) => {
         const recipies: Recipe [] = resp.json();
